@@ -1,0 +1,39 @@
+{
+  "name": "selfsb0",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "predev": "rimraf dist",
+    "dev": "run-p dev:*",
+    "dev:tsc": "tsc -w -p tsconfig.main.json",
+    "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
+    "dev:electron": "wait-on ./dist/main.js && wait-on ./dist/renderer/index.html && cross-env NODE_ENV=\"development\" electron .",
+    "build": "run-s build:webpack build:electron",
+    "build:webpack": "rimraf dist && cross-env NODE_ENV=\"production\" webpack --progress",
+    "build:electron": "electron-packager . --out=build --overwrite --ignore=\"/(node_modules|src|\\.idea|\\.editorconfig|\\.gitignore|tsconfig.json|tsconfig.main.json|webpack.config.ts|build)\" --asar"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^3.0.0",
+    "@types/mini-css-extract-plugin": "^2.4.0",
+    "@types/node": "^17.0.6",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "electron": "^16.0.5",
+    "electron-packager": "^15.4.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "html-webpack-plugin": "^5.5.0",
+    "ifdef-loader": "^2.3.2",
+    "mini-css-extract-plugin": "^2.4.5",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "svelte": "^3.44.3",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess": "^4.10.1",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4",
+    "wait-on": "^6.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "sourceMap": true,
+    "outDir": "dist"
+  },
+  "exclude": [
+    "node_modules",
+    "src/renderer/**"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/@types/*"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "target": "ES2021",
+      "module": "CommonJS"
+    }
+  }
+}
