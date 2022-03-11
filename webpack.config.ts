@@ -4,9 +4,9 @@ import path from "path";
 import { Configuration } from 'webpack';
 
 // @ts-ignore
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 // @ts-ignore
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const isDev = process.env.NODE_ENV === 'development';
 
